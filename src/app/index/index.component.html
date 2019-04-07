@@ -1,0 +1,18 @@
+<div class="container">
+  <h2>Welcome to my Portfolio<a *ngIf="hardcodedAuthenticationService.isUserLoggedIn()">, {{username}}</a>!</h2>
+  <p>Please feel free to take a look around on my site!</p>
+  <p>(This site is coded in AngularJS)</p>
+  <br>
+  <strong *ngIf="!hardcodedAuthenticationService.isUserLoggedIn()">Your current User-Level is: <b>0</b></strong>
+  <strong *ngIf="hardcodedAuthenticationService.isUserLoggedIn()">Your current User-Level is: <b>{{hardcodedAuthenticationService.getUserRights()}}</b></strong>
+</div>
+<br>
+<div class="container">
+  Click Here to get a Customized Welcome Message!
+  <button (click)="getWelcomeMessageWithParameters()" class="btn btn-success">Get Welcome</button>
+</div>
+<br>
+<div class="container" *ngIf="welcomeMessageFromService">
+  <h2>Customized Welcome Message:</h2>
+  <p>{{welcomeMessageFromService}}</p>
+</div>

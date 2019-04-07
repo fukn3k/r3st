@@ -1,0 +1,37 @@
+<div class="pos-f-t">
+  <div class="collapse" id="navbarToggleExternalContent">
+    <div class="bg-dark p-4">
+      <h4 class="text-white">Menu</h4>
+      <br>
+      <div class="nav justify-content-center">
+        <kbd>Pages:</kbd>
+        <button *ngIf="!hardcodedAuthenticationService.isUserLoggedIn()" routerLink="/index/" class="btn btn-outline-info">Hoofdpagina</button>
+        <button *ngIf="hardcodedAuthenticationService.isUserLoggedIn()" routerLink="/index/{{hardcodedAuthenticationService.getUserName()}}" class="btn btn-outline-info">Hoofdpagina</button>
+        <button routerLink="/about" class="btn btn-outline-info">Over Mij</button>
+        <button routerLink="/contact" class="btn btn-outline-info">Contact</button>
+      </div>
+      <br>
+      <div class="nav justify-content-center">
+        <kbd>Projects:  </kbd>
+        <button routerLink="/todos" class="btn btn-outline-warning">Rest Todo List</button>
+        <button routerLink="/gr" class="btn btn-outline-warning">Graal Reborn Servers</button>
+        <button routerLink="/" class="btn btn-outline-warning">API 3</button>
+      </div>
+      <br>
+      <div class="nav justify-content-center">
+        <kbd *ngIf="hardcodedAuthenticationService.isAdmin()">Admin:  </kbd>
+        <button *ngIf="hardcodedAuthenticationService.isAdmin()" routerLink="/admin" class="btn btn-danger">Control Panel</button>
+      </div>
+      <br>
+      <div class="nav justify-content-center">
+        <button *ngIf="!hardcodedAuthenticationService.isUserLoggedIn()" routerLink="/login" class="btn btn-info">Log-In</button>
+        <button *ngIf="hardcodedAuthenticationService.isUserLoggedIn()" routerLink="/logout" class="btn btn-info">Log-Out</button>
+      </div>
+    </div>
+  </div>
+  <nav class="navbar navbar-dark bg-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </nav>
+</div>

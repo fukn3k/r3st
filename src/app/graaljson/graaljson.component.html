@@ -1,0 +1,26 @@
+<h1>Graal Reborn Server-list</h1>
+<br>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <td>Name</td>
+      <td>Description</td>
+      <td>Url</td>
+      <td>Version</td>
+      <td>Uptime</td>
+      <td>Playercount</td>
+      <td>Playerlist</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let a of gr_json index as i;">
+        <td>{{gr_json[i].name | json}}</td>
+        <td>{{gr_json[i].description | json}}</td>
+        <td>{{gr_json[i].url | json}}</td>
+        <td>{{gr_json[i].version | json}}</td>
+        <td>{{gr_json[i].uptime | json}}</td>
+        <td>{{gr_json[i].playercount | json}}</td>
+        <td>{{gr_json[i].playerlist | json}}</td>
+    </tr>
+  </tbody>
+</table>
